@@ -32,14 +32,12 @@ localhost:8080/api/client/get/{id} - выводил данные клиента 
 localhost:8080/api/client/add - добавлял нового пользователя
 
 входные данные:
-\```
 {
     "name": "test",
     "email": "test@email.ru",
     "phoneNumber": "72131312",
     "password": "1"   
 }
-\```
 
 localhost:8080/api/client/update/{id} -онбовления данных пользователя по указаному id
 
