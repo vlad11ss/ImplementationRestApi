@@ -36,13 +36,10 @@ localhost:8080/api/client/add - добавлял нового пользоват
 {
 
     "name": "test",
-
     "email": "test@email.ru",
-
     "phoneNumber": "72131312",
-
     "password": "1"   
-    
+
 }
 
 localhost:8080/api/client/update/{id} -онбовления данных пользователя по указаному id
