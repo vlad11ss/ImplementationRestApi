@@ -11,45 +11,61 @@
    
 Данный проект позволил закрепить навыки работы с REST API и базами данных, а также организовать эффективную работу сервиса с учётом всех технических требований.
 
+---
+
+# Инструкция 
+
+---
+
+1. перейдите на страницу регистрации http://localhost:8080/login
+2. если нету аккаунта http://localhost:8080/registration
+3. подробную документацию можно найти после запуска прогарммы по такому адерсу http://localhost:8080/swagger-ui/index.html#/
+4. Для взаймодесвия с БД http://localhost:8080/h2-console
+   * JDBC URL:jdbc:h2:file:<ваш путь>
+   * username:sa
+   * password:pas
+
+<kbd>CTRL</kbd> + <kbd>C</kbd> + <kbd>CTRL</kbd> + <kbd>V</kbd>
+
+---
 
 # REST API
 ---
+С данными пользователя 
 
-##### GET и POST запросы по работе с данными пользователя
+GET
+localhost:8080/api/client/all
+localhost:8080/api/client/get/1
+POST
+localhost:8080/api/client/add
+localhost:8080/api/client/update/1
 
-#### GET
-> GET запросы по работе с данными пользователя 
+---
+С данными записи в басейн
 
-localhost:8080/api/client/all - выводил всех пользователей 
-
-localhost:8080/api/client/get/{id} - выводил данные клиента по указанному id
+GET
+localhost:8080/api/timetable/all/2024-09-25
+localhost:8080/api/timetable/available/2024-09-25
+POST
+localhost:8080/api/timetable/reserve
+localhost:8080/api/timetable/cancel/1
 
 ---
 
-#### POST
-> POST запросы по работе с данными пользователя 
+# Front
+---
 
-localhost:8080/api/client/add - добавлял нового пользователя
+Так же у данного проекат есть небольшая фронтенд часть.
+Он включает в себя следущиие формы:
+1. форма регистрации /login
+2. форма авторизации /registration
+3. форма реализации записи в басейн(по дате и времени) /booking 
+4. форма вывода сообщения об успешной и записи /booking_success
+   
+---
 
-входные данные:
+# DataBase
+---
+структура таблиц 
 
-{
-
-    "name": "test",
-    "email": "test@email.ru",
-    "phoneNumber": "72131312",
-    "password": "1"   
-
-}
-
-localhost:8080/api/client/update/{id} -онбовления данных пользователя по указаному id
-
->входные данные
-\```
-{
-    "name": "test",
-    "email": "test@email.ru",
-    "phoneNumber": "72131312",
-    "password": "1"   
-}
-\```
+![стурктура таблиц](https://i.ibb.co/WttYY2D/2024-10-02-115503.png)

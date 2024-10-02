@@ -27,7 +27,8 @@ public class SecurityConfig {
         http
                 // Отключаем CSRF для /api/**
                 .csrf(csrf -> csrf
-                        .ignoringRequestMatchers("/api/**")
+                        .ignoringRequestMatchers("/api/**","/h2-console/**")
+
                 )
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/registration", "/api/**").permitAll() // Открыть доступ к регистрации и API
@@ -43,7 +44,9 @@ public class SecurityConfig {
                 // Добавляем обработку исключений для API
                 .exceptionHandling(exception -> exception
                         .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
-                );
+                )
+                .headers(headers -> headers.frameOptions().disable());
+
 
         return http.build();
     }

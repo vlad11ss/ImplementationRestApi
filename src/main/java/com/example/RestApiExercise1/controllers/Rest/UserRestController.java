@@ -4,6 +4,7 @@ import com.example.RestApiExercise1.models.User;
 import com.example.RestApiExercise1.models.dto.UserDTO;
 import com.example.RestApiExercise1.models.enums.Role;
 import com.example.RestApiExercise1.repositories.UserRepository;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/api/client")
 @RestController
 @RequiredArgsConstructor
+@Tag(name = "user_controller")
 public class UserRestController {
 
     private final UserRepository userRepository;
