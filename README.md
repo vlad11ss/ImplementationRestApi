@@ -17,9 +17,9 @@
 
 ---
 
-1. перейдите на страницу регистрации http://localhost:8080/login
+1. перейдите на страницу авторизаии http://localhost:8080/login
 2. если нету аккаунта http://localhost:8080/registration
-3. подробную документацию можно найти после запуска прогарммы по такому адерсу http://localhost:8080/swagger-ui/index.html#/
+3. подробную документацию  про работу POST и GET запросов можно найти после запуска прогарммы по такому адерсу http://localhost:8080/swagger-ui/index.html#/
 4. Для взаймодесвия с БД http://localhost:8080/h2-console
    * JDBC URL:jdbc:h2:file:<ваш путь>
    * username:sa
