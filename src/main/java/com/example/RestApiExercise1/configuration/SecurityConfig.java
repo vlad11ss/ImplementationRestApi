@@ -27,11 +27,11 @@ public class SecurityConfig {
         http
                 // Отключаем CSRF для /api/**
                 .csrf(csrf -> csrf
-                        .ignoringRequestMatchers("/api/**","/h2-console/**")
+                        .ignoringRequestMatchers("/api/**","/h2-console/**","/swagger-ui/**")
 
                 )
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/registration", "/api/**").permitAll() // Открыть доступ к регистрации и API
+                        .requestMatchers("/registration", "/api/**","/h2-console/**","/swagger-ui/**").permitAll() // Открыть доступ к регистрации и API
                         .requestMatchers("/booking", "/booking/success")
                         .hasAnyAuthority("ROLE_ADMIN", "ROLE_USER") // Разрешить доступ к домашней и записи
                         .anyRequest().authenticated() // Все остальные запросы требуют авторизации
